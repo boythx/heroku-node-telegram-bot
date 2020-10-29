@@ -19,6 +19,7 @@ var server = app.listen(process.env.PORT, "0.0.0.0", () => {
 module.exports = (bot) => {
   app.post('/' + bot.token, (req, res) => {
     bot.processUpdate(req.body);
+    console.log(req.body);
     res.sendStatus(200);
   });
 };
